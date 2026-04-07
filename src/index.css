@@ -18,6 +18,10 @@
     --primary: 213 75% 45%;
     --primary-foreground: 0 0% 100%;
 
+    --danger: 0 80% 50%;
+    --danger-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 100%;
+
     --secondary: 210 15% 93%;
     --secondary-foreground: 215 25% 15%;
 
