@@ -17,7 +17,7 @@ const ServicesSection = () => {
         <div className="text-center mb-16 animate-on-scroll">
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Services</span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3">
-            End-to-End Manufacturing
+            End-to-End <span className="text-danger">Manufacturing</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
             From concept to delivery, we provide comprehensive plastic manufacturing and supply services.

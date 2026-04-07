@@ -20,7 +20,7 @@ const ProductsSection = () => {
         <div className="text-center mb-16 animate-on-scroll">
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Products</span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3">
-            Premium Packaging Solutions
+            Premium <span className="text-primary">Packaging</span> <span className="text-danger">Solutions</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
             Explore our range of high-quality plastic packaging products, manufactured to international standards.

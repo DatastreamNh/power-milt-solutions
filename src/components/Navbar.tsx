@@ -35,8 +35,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         <button onClick={() => handleClick("#home")} className="font-display text-xl md:text-2xl font-bold tracking-tight">
-          <span className="text-primary">Power</span>
-          <span className={scrolled ? "text-foreground" : "text-primary-foreground"}>Milt</span>
+          <span className="text-danger">Power</span>
+          <span className="text-primary">Milt</span>
         </button>
 
         <div className="hidden md:flex items-center gap-8">

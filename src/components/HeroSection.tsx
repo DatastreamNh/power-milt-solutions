@@ -23,7 +23,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-navy-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Quality Plastic Packaging{" "}
+            <span className="text-danger">Quality</span> Plastic Packaging{" "}
             <span className="text-primary">You Can Trust</span>
           </h1>
 

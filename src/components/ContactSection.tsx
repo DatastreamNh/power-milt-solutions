@@ -26,7 +26,7 @@ const ContactSection = () => {
         <div className="text-center mb-16 animate-on-scroll">
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Contact Us</span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3">
-            Get In Touch
+            Get <span className="text-primary">In</span> <span className="text-danger">Touch</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
             Ready to discuss your packaging needs? Reach out to our team today.
