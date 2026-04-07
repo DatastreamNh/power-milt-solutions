@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
           <div>
             <h3 className="font-display text-2xl font-bold mb-4">
-              <span className="text-primary">Power</span>Milt
+              <span className="text-danger">Power</span><span className="text-primary">Milt</span>
             </h3>
             <p className="text-navy-foreground/60 leading-relaxed mb-6">
               Quality Plastic Packaging You Can Trust. Manufacturing premium packaging solutions in Harare, Zimbabwe.
