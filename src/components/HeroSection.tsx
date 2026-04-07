@@ -1,8 +1,53 @@
 import { ArrowRight, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect, useCallback } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 
+const phrases = [
+  "Quality Plastic Packaging",
+  "Reliable Manufacturing Solutions",
+  "Trusted Plastic Suppliers in Zimbabwe",
+];
+
+const TYPING_SPEED = 70;
+const DELETING_SPEED = 40;
+const PAUSE_AFTER_TYPE = 2000;
+const PAUSE_AFTER_DELETE = 500;
+
+const useTypewriter = (words: string[]) => {
+  const [text, setText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const tick = useCallback(() => {
+    const current = words[wordIndex];
+    if (!isDeleting) {
+      setText(current.slice(0, text.length + 1));
+      if (text.length + 1 === current.length) {
+        setTimeout(() => setIsDeleting(true), PAUSE_AFTER_TYPE);
+        return;
+      }
+    } else {
+      setText(current.slice(0, text.length - 1));
+      if (text.length - 1 === 0) {
+        setIsDeleting(false);
+        setWordIndex((i) => (i + 1) % words.length);
+        return;
+      }
+    }
+  }, [text, wordIndex, isDeleting, words]);
+
+  useEffect(() => {
+    const speed = isDeleting ? DELETING_SPEED : TYPING_SPEED;
+    const id = setTimeout(tick, speed);
+    return () => clearTimeout(id);
+  }, [tick, isDeleting]);
+
+  return text;
+};
+
 const HeroSection = () => {
+  const typed = useTypewriter(phrases);
   const scrollTo = (id: string) =>
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -23,7 +68,9 @@ const HeroSection = () => {
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-navy-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            <span className="text-danger">Quality</span> Plastic Packaging{" "}
+            <span className="text-danger">{typed}</span>
+            <span className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 align-middle animate-blink" />
+            <br />
             <span className="text-primary">You Can Trust</span>
           </h1>
 
