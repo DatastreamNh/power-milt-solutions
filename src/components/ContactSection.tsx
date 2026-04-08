@@ -21,52 +21,39 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-muted/50" ref={ref}>
-      <div className="container mx-auto">
-        <div className="text-center mb-16 animate-on-scroll">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Contact Us</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3">
+    <section id="contact" className="section-padding bg-background" ref={ref}>
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-20 animate-on-scroll">
+          <p className="text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4">Contact Us</p>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
             Get <span className="text-primary">In</span> <span className="text-danger">Touch</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
             Ready to discuss your packaging needs? Reach out to our team today.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="animate-on-scroll space-y-8">
-            <div className="flex gap-4 items-start">
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <MapPin className="h-6 w-6 text-primary" />
+        <div className="grid lg:grid-cols-2 gap-16">
+          <div className="animate-on-scroll space-y-10">
+            {[
+              { icon: MapPin, title: "Our Location", lines: ["476 Coventry Road, Workington, Harare, Zimbabwe"] },
+              { icon: Phone, title: "Phone", lines: ["+263 784 231 146", "+263 714 704 101"] },
+              { icon: Mail, title: "Email", lines: ["admin@powermilt.co.zw"] },
+            ].map((item) => (
+              <div key={item.title} className="flex gap-5 items-start">
+                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-display font-semibold text-foreground mb-1">{item.title}</h4>
+                  {item.lines.map((line) => (
+                    <p key={line} className="text-muted-foreground">{line}</p>
+                  ))}
+                </div>
               </div>
-              <div>
-                <h4 className="font-display font-semibold text-foreground mb-1">Our Location</h4>
-                <p className="text-muted-foreground">476 Coventry Road, Workington, Harare, Zimbabwe</p>
-              </div>
-            </div>
+            ))}
 
-            <div className="flex gap-4 items-start">
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Phone className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h4 className="font-display font-semibold text-foreground mb-1">Phone</h4>
-                <p className="text-muted-foreground">+263 784 231 146</p>
-                <p className="text-muted-foreground">+263 714 704 101</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start">
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Mail className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h4 className="font-display font-semibold text-foreground mb-1">Email</h4>
-                <p className="text-muted-foreground">admin@powermilt.co.zw</p>
-              </div>
-            </div>
-
-            <div className="rounded-xl overflow-hidden border border-border h-64 lg:h-auto">
+            <div className="rounded-2xl overflow-hidden h-64 lg:h-auto">
               <iframe
                 title="Power Milt Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5!2d31.0!3d-17.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ5JzQ4LjAiUyAzMcKwMDAnMDAuMCJF!5e0!3m2!1sen!2szw!4v1"
@@ -80,37 +67,20 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="animate-on-scroll bg-card rounded-xl border border-border p-8 space-y-6">
+          <form onSubmit={handleSubmit} className="animate-on-scroll bg-secondary/30 rounded-2xl p-8 space-y-6">
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">Full Name</label>
-              <Input
-                placeholder="Your name"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                maxLength={100}
-              />
+              <Input placeholder="Your name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} maxLength={100} className="bg-background border-border/50 h-12 rounded-xl" />
             </div>
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">Email Address</label>
-              <Input
-                type="email"
-                placeholder="you@company.com"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                maxLength={255}
-              />
+              <Input type="email" placeholder="you@company.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} maxLength={255} className="bg-background border-border/50 h-12 rounded-xl" />
             </div>
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">Message</label>
-              <Textarea
-                placeholder="Tell us about your packaging needs..."
-                rows={5}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                maxLength={1000}
-              />
+              <Textarea placeholder="Tell us about your packaging needs..." rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} maxLength={1000} className="bg-background border-border/50 rounded-xl" />
             </div>
-            <Button type="submit" size="lg" className="w-full gap-2">
+            <Button type="submit" size="lg" className="w-full gap-2 h-14 rounded-full text-base">
               <Send className="h-5 w-5" />
               Send Message
             </Button>

@@ -12,14 +12,14 @@ const ServicesSection = () => {
   const ref = useScrollAnimation();
 
   return (
-    <section id="services" className="section-padding bg-background" ref={ref}>
-      <div className="container mx-auto">
-        <div className="text-center mb-16 animate-on-scroll">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Services</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3">
-            End-to-End <span className="text-danger">Manufacturing</span>
+    <section id="services" className="section-padding bg-secondary/30" ref={ref}>
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-20 animate-on-scroll">
+          <p className="text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4">Our Services</p>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            End-to-End<br /><span className="text-danger">Manufacturing</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
             From concept to delivery, we provide comprehensive plastic manufacturing and supply services.
           </p>
         </div>
@@ -28,16 +28,14 @@ const ServicesSection = () => {
           {services.map((s, i) => (
             <div
               key={s.title}
-              className="animate-on-scroll group flex gap-5 p-8 rounded-xl border border-border bg-card hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+              className="animate-on-scroll group bg-background rounded-2xl p-8 hover:shadow-xl transition-all duration-500"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+              <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                 <s.icon className="h-7 w-7 text-primary" />
               </div>
-              <div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">{s.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
+              <h3 className="font-display text-xl font-semibold text-foreground mb-3">{s.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

@@ -1,11 +1,10 @@
 import { useEffect, useState, useRef } from "react";
-import { Factory, Users, Package, Award } from "lucide-react";
 
 const stats = [
-  { icon: Factory, value: 10, suffix: "+", label: "Years of Experience" },
-  { icon: Users, value: 500, suffix: "+", label: "Happy Clients" },
-  { icon: Package, value: 1000000, suffix: "+", label: "Products Delivered", display: "1M+" },
-  { icon: Award, value: 100, suffix: "%", label: "Quality Commitment" },
+  { value: 10, suffix: "+", label: "Years Experience" },
+  { value: 500, suffix: "+", label: "Happy Clients" },
+  { value: 1, suffix: "M+", label: "Products Delivered", display: "1M+" },
+  { value: 100, suffix: "%", label: "Quality Commitment" },
 ];
 
 const AnimatedCounter = ({ target, suffix, display }: { target: number; suffix: string; display?: string }) => {
@@ -18,22 +17,15 @@ const AnimatedCounter = ({ target, suffix, display }: { target: number; suffix: 
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
-          if (display) {
-            setCount(target);
-            return;
-          }
+          if (display) { setCount(target); return; }
           const duration = 2000;
           const steps = 60;
           const increment = target / steps;
           let current = 0;
           const timer = setInterval(() => {
             current += increment;
-            if (current >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(current));
-            }
+            if (current >= target) { setCount(target); clearInterval(timer); }
+            else setCount(Math.floor(current));
           }, duration / steps);
         }
       },
@@ -44,21 +36,20 @@ const AnimatedCounter = ({ target, suffix, display }: { target: number; suffix: 
   }, [target, display]);
 
   return (
-    <span ref={ref} className="font-display text-4xl md:text-5xl font-bold text-primary">
-      {display ? display : `${count}${suffix}`}
+    <span ref={ref} className="font-display text-5xl md:text-6xl font-bold text-foreground tracking-tight">
+      {display || `${count}${suffix}`}
     </span>
   );
 };
 
 const StatsSection = () => (
-  <section className="relative -mt-16 z-10 px-4">
+  <section className="py-20 md:py-28 px-4 bg-background">
     <div className="container mx-auto">
-      <div className="bg-card rounded-2xl shadow-xl border border-border p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
-            <stat.icon className="h-8 w-8 text-primary mx-auto mb-3" />
             <AnimatedCounter target={stat.value} suffix={stat.suffix} display={stat.display} />
-            <p className="text-sm text-muted-foreground mt-2">{stat.label}</p>
+            <p className="text-sm text-muted-foreground mt-3 tracking-wide uppercase">{stat.label}</p>
           </div>
         ))}
       </div>
