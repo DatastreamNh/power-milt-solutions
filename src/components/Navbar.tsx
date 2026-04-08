@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -51,6 +52,7 @@ const Navbar = () => {
               {link.label}
             </button>
           ))}
+          <ThemeToggle />
           <a href="tel:+263784231146">
             <Button size="sm" className="gap-2 rounded-full px-5">
               <Phone className="h-4 w-4" />
