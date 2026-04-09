@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -8,12 +9,14 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
   { label: "Services", href: "#services" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -23,7 +26,11 @@ const Navbar = () => {
 
   const handleClick = (href: string) => {
     setMobileOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("/")) {
+      navigate(href);
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
