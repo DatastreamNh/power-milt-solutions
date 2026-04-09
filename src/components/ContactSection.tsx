@@ -16,7 +16,9 @@ const ContactSection = () => {
       toast.error("Please fill in all fields.");
       return;
     }
-    toast.success("Thank you! We'll get back to you shortly.");
+    const text = `Hello Power Milt!%0A%0AName: ${encodeURIComponent(form.name)}%0AEmail: ${encodeURIComponent(form.email)}%0AMessage: ${encodeURIComponent(form.message)}`;
+    window.open(`https://wa.me/263784231146?text=${text}`, "_blank");
+    toast.success("Opening WhatsApp...");
     setForm({ name: "", email: "", message: "" });
   };
 
