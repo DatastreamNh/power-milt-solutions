@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -6,6 +6,12 @@ const quickLinks = [
   { label: "Products", href: "#products" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
+];
+
+const socialLinks = [
+  { icon: Facebook, href: "https://facebook.com/powermilt", label: "Facebook" },
+  { icon: Instagram, href: "https://instagram.com/powermilt", label: "Instagram" },
+  { icon: Youtube, href: "https://youtube.com/@powermilt", label: "YouTube" },
 ];
 
 const Footer = () => {
@@ -23,6 +29,20 @@ const Footer = () => {
             <p className="text-background/50 leading-relaxed mb-6">
               Quality Plastic Packaging You Can Trust. Manufacturing premium packaging solutions in Harare, Zimbabwe.
             </p>
+            <div className="flex gap-3">
+              {socialLinks.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="h-10 w-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <s.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
