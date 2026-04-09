@@ -59,12 +59,6 @@ const HeroSection = () => {
 
       <div className="relative container mx-auto px-4 py-32 md:py-0">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-8 animate-fade-up">
-            <Package className="h-4 w-4 text-white/80" />
-            <span className="text-sm font-medium text-white/80 tracking-wide">
-              Zimbabwe's Trusted Packaging Partner
-            </span>
-          </div>
 
           <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-4 animate-fade-up" style={{ animationDelay: "0.15s" }}>
             <span className="text-white">{typed}</span>
