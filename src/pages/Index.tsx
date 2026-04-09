@@ -7,7 +7,7 @@ import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
-import Gallery from "@/pages/Gallery.tsx";
+
 const Index = () => (
   <div className="min-h-screen">
     <Navbar />
