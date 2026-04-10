@@ -3,6 +3,7 @@ import { Menu, X, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
+import pmmsLogo from "@/assets/pmms-logo.jpeg";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -42,9 +43,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
-        <button onClick={() => handleClick("#home")} className="font-display text-xl md:text-2xl font-bold tracking-tight">
-          <span className={scrolled ? "text-danger" : "text-white"}>Power</span>
-          <span className={scrolled ? "text-primary" : "text-white/80"}>Milt</span>
+        <button onClick={() => handleClick("#home")} className="flex items-center gap-2">
+          <img src={pmmsLogo} alt="PMMS Logo" className="h-10 md:h-12 w-auto rounded" />
         </button>
 
         <div className="hidden md:flex items-center gap-8">
