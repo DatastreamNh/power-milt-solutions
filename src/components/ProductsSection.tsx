@@ -1,8 +1,8 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import containersImg from "@/assets/product-containers.jpg";
-import cupsImg from "@/assets/product-cups.jpg";
-import plugsImg from "@/assets/product-plugs.jpg";
-import preformsImg from "@/assets/product-preforms.jpg";
+import containersImg from "@/assets/product-containers-new.jpg";
+import cupsImg from "@/assets/product-cups-new.jpg";
+import plugsImg from "@/assets/product-plugs-new.jpg";
+import preformsImg from "@/assets/product-preforms-new.jpg";
 
 const products = [
   { name: "Plastic Containers", desc: "Durable, food-safe containers for storage, packaging, and distribution.", img: containersImg },
