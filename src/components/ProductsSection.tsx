@@ -3,12 +3,22 @@ import containersImg from "@/assets/product-containers-new.jpg";
 import cupsImg from "@/assets/product-cups-new.jpg";
 import plugsImg from "@/assets/product-plugs-new.jpg";
 import preformsImg from "@/assets/product-preforms-new.jpg";
+import containersSetImg from "@/assets/product-containers-set.jpeg";
+import flasksImg from "@/assets/product-flasks.jpeg";
+import travelCupsImg from "@/assets/product-travel-cups.jpeg";
+import lunchSetImg from "@/assets/product-lunch-set.jpeg";
+import largeBottlesImg from "@/assets/product-large-bottles.jpeg";
 
 const products = [
   { name: "Plastic Containers", desc: "Durable, food-safe containers for storage, packaging, and distribution.", img: containersImg },
   { name: "Plastic Cups", desc: "High-quality disposable and reusable cups for food service industries.", img: cupsImg },
   { name: "Plastic Plugs", desc: "Precision-moulded caps and plugs for bottles and containers.", img: plugsImg },
   { name: "PET Preforms", desc: "Premium PET preforms for blow-moulding into bottles.", img: preformsImg },
+  { name: "Food Storage Sets", desc: "Complete container sets with lids for household and commercial food storage.", img: containersSetImg },
+  { name: "Vacuum Flasks", desc: "Insulated plastic flasks available in multiple colours for hot and cold beverages.", img: flasksImg },
+  { name: "Travel Mugs", desc: "Stylish reusable travel cups with secure lids, available in various colours.", img: travelCupsImg },
+  { name: "Lunch Box Sets", desc: "Portable lunch containers with carry bags and utensils for on-the-go meals.", img: lunchSetImg },
+  { name: "Large PET Bottles & Caps", desc: "Heavy-duty 5L PET bottles with preforms and colour caps for water and beverages.", img: largeBottlesImg },
 ];
 
 const ProductsSection = () => {
