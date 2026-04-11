@@ -27,7 +27,7 @@ const Footer = () => {
             <h3 className="font-display text-2xl font-bold mb-4">
               <span className="text-danger">Power</span><span className="text-primary">Milt</span>
             </h3>
-            <p className="text-background/50 leading-relaxed mb-6">
+            <p className="text-white/50 leading-relaxed mb-6">
               Quality Plastic Packaging You Can Trust. Manufacturing premium packaging solutions in Harare, Zimbabwe.
             </p>
             <div className="flex gap-3">
@@ -38,7 +38,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="h-10 w-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <s.icon className="h-4 w-4" />
                 </a>
@@ -53,7 +53,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="text-background/50 hover:text-primary transition-colors text-sm"
+                    className="text-white/50 hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
                   </button>
@@ -67,22 +67,22 @@ const Footer = () => {
             <div className="space-y-4 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-background/50">476 Coventry Road, Workington, Harare, Zimbabwe</span>
+                <span className="text-white/50">476 Coventry Road, Workington, Harare, Zimbabwe</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-background/50">+263 784 231 146</span>
+                <span className="text-white/50">+263 784 231 146</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-background/50">admin@powermilt.co.zw</span>
+                <span className="text-white/50">admin@powermilt.co.zw</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-background/10 mt-16 pt-8 text-center">
-          <p className="text-sm text-background/30">
+        <div className="border-t border-white/10 mt-16 pt-8 text-center">
+          <p className="text-sm text-white/30">
             © {new Date().getFullYear()} Power Milt Manufacturer and Supply. All rights reserved.
           </p>
         </div>
