@@ -19,7 +19,8 @@ const Footer = () => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="navy-gradient text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
       <div className="container mx-auto px-4 py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
           <div>
