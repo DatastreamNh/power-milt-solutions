@@ -23,8 +23,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-background" ref={ref}>
-      <div className="container mx-auto max-w-5xl">
+    <section id="contact" className="section-padding rich-gradient-alt relative overflow-hidden" ref={ref}>
+      <div className="absolute top-0 left-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      
+      <div className="container mx-auto max-w-5xl relative z-10">
         <div className="text-center mb-20 animate-on-scroll">
           <p className="text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4">Contact Us</p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
@@ -43,7 +45,7 @@ const ContactSection = () => {
               { icon: Mail, title: "Email", lines: ["admin@powermilt.co.zw"] },
             ].map((item) => (
               <div key={item.title} className="flex gap-5 items-start">
-                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0">
                   <item.icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -55,7 +57,7 @@ const ContactSection = () => {
               </div>
             ))}
 
-            <div className="rounded-2xl overflow-hidden h-64 lg:h-auto">
+            <div className="rounded-2xl overflow-hidden h-64 lg:h-auto shadow-lg border border-border/50">
               <iframe
                 title="Power Milt Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5!2d31.0!3d-17.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ5JzQ4LjAiUyAzMcKwMDAnMDAuMCJF!5e0!3m2!1sen!2szw!4v1"
@@ -69,7 +71,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="animate-on-scroll bg-secondary/30 rounded-2xl p-8 space-y-6">
+          <form onSubmit={handleSubmit} className="animate-on-scroll rich-card p-8 space-y-6">
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">Full Name</label>
               <Input placeholder="Your name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} maxLength={100} className="bg-background border-border/50 h-12 rounded-xl" />
