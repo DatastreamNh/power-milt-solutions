@@ -45,7 +45,8 @@ const GallerySection = () => {
   const nextSlide = useCallback(() => setSlideIndex((i) => (i + 1) % images.length), []);
 
   return (
-    <section id="gallery" className="section-padding bg-secondary/30" ref={ref}>
+    <section id="gallery" className="section-padding rich-gradient-alt relative overflow-hidden" ref={ref}>
+      <div className="absolute top-10 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-on-scroll">
           <p className="text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-3">Gallery</p>
