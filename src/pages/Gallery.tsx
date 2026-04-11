@@ -11,13 +11,23 @@ import containersImg from "@/assets/product-containers.jpg";
 import cupsImg from "@/assets/product-cups.jpg";
 import plugsImg from "@/assets/product-plugs.jpg";
 import preformsImg from "@/assets/product-preforms.jpg";
+import cupsRealImg from "@/assets/gallery-cups-real.jpeg";
+import bottlesImg from "@/assets/gallery-bottles.jpeg";
+import machinePreformsImg from "@/assets/gallery-machine-preforms.jpeg";
+import bottlingLineImg from "@/assets/gallery-bottling-line.jpeg";
+import machineOutputImg from "@/assets/gallery-machine-output.jpeg";
 
 const galleryImages = [
   { src: locationImg, title: "Our Factory – Workington, Harare", category: "Facility" },
   { src: machine1Img, title: "Production Line Inspection", category: "Manufacturing" },
   { src: machine3Img, title: "Blow Moulding Machine", category: "Manufacturing" },
+  { src: machinePreformsImg, title: "Preform Production Machine", category: "Manufacturing" },
+  { src: machineOutputImg, title: "Bottle Manufacturing Output", category: "Manufacturing" },
+  { src: bottlingLineImg, title: "Bottling Production Line", category: "Manufacturing" },
   { src: containersImg, title: "Plastic Containers", category: "Products" },
   { src: cupsImg, title: "Plastic Cups", category: "Products" },
+  { src: cupsRealImg, title: "Drinking Cups", category: "Products" },
+  { src: bottlesImg, title: "PET Bottles", category: "Products" },
   { src: plugsImg, title: "Plastic Plugs & Caps", category: "Products" },
   { src: preformsImg, title: "PET Preforms", category: "Products" },
 ];
