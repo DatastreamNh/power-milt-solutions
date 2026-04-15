@@ -40,7 +40,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           <div className="animate-on-scroll space-y-10">
             {[
-              { icon: MapPin, title: "Our Location", lines: ["476 Coventry Road, Workington, Harare, Zimbabwe"] },
+              { icon: MapPin, title: "Our Location", lines: ["47 Coventry Road, Workington, Harare, Zimbabwe"] },
               { icon: Phone, title: "Phone", lines: ["+263 784 231 146", "+263 714 704 101"] },
               { icon: Mail, title: "Email", lines: ["admin@powermilt.co.zw"] },
             ].map((item) => (
