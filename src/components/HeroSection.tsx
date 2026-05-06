@@ -51,41 +51,31 @@ const HeroSection = () => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="Plastic manufacturing facility" className="w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/80" />
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background pt-24 pb-12">
+      <div className="relative container mx-auto px-4 text-center max-w-5xl flex-shrink-0">
+        <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-semibold leading-[0.95] tracking-tight text-foreground mb-6 animate-fade-up">
+          {typed}
+          <span className="inline-block w-[3px] h-[0.7em] bg-foreground ml-1 align-middle animate-blink" />
+        </h1>
+
+        <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed font-light animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          High-quality plastic containers, cups, plugs, and preforms for businesses across Zimbabwe and beyond.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-6 text-base md:text-lg font-medium animate-fade-up" style={{ animationDelay: "0.35s" }}>
+          <button onClick={() => scrollTo("#contact")} className="text-foreground underline-offset-4 hover:underline transition">
+            Request a quote ›
+          </button>
+          <button onClick={() => scrollTo("#products")} className="text-muted-foreground hover:text-foreground transition">
+            View products ›
+          </button>
+        </div>
       </div>
 
-      <div className="relative container mx-auto px-4 py-32 md:py-0">
-        <div className="max-w-3xl">
-
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-4 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            <span className="text-white">{typed}</span>
-            <span className="inline-block w-[3px] h-[0.75em] bg-white ml-1 align-middle animate-blink" />
-          </h1>
-
-          <p className="text-lg md:text-xl lg:text-2xl font-light text-white/60 leading-relaxed mb-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <span className="text-primary font-medium">You Can Trust</span>
-          </p>
-
-          <p className="text-base md:text-lg text-white/50 mb-10 max-w-xl leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            Specializing in high-quality plastic containers, cups, plugs, and preforms for businesses across Zimbabwe and beyond.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.45s" }}>
-            <Button size="lg" className="gap-2 text-base h-14 px-8 rounded-full" onClick={() => scrollTo("#contact")}>
-              Request a Quote
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="gap-2 text-base h-14 px-8 rounded-full border-white/20 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm"
-              onClick={() => scrollTo("#products")}
-            >
-              View Products
-            </Button>
+      <div className="relative w-full mt-16 md:mt-20 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+        <div className="container mx-auto px-4">
+          <div className="rounded-3xl overflow-hidden aspect-[16/8] md:aspect-[21/9] bg-secondary">
+            <img src={heroBg} alt="Plastic manufacturing" className="w-full h-full object-cover" width={1920} height={1080} />
           </div>
         </div>
       </div>

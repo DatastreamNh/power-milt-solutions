@@ -35,17 +35,15 @@ const ProductsSection = () => {
   const ref = useScrollAnimation();
 
   return (
-    <section id="products" className="section-padding rich-gradient relative overflow-hidden" ref={ref}>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-primary/5 rounded-full blur-3xl -translate-x-1/3" />
-      
-      <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center mb-20 animate-on-scroll">
-          <p className="text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4">Our Products</p>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-            Premium <span className="text-primary">Packaging</span>
-            <br /><span className="text-danger">Solutions</span>
+    <section id="products" className="section-padding bg-background relative" ref={ref}>
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="mb-20 animate-on-scroll max-w-3xl">
+          <p className="text-xs font-medium text-muted-foreground uppercase tracking-[0.18em] mb-5">Products</p>
+          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-foreground leading-[0.95] tracking-tight">
+            Premium packaging.<br />
+            <span className="text-muted-foreground">Crafted to last.</span>
           </h2>
-          <p className="text-muted-foreground mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-muted-foreground mt-8 max-w-2xl text-lg md:text-xl leading-relaxed font-light">
             Explore our range of high-quality plastic packaging products, manufactured to international standards.
           </p>
         </div>
@@ -54,23 +52,22 @@ const ProductsSection = () => {
           {products.map((p, i) => (
             <div
               key={p.name}
-              className="animate-on-scroll group rich-card overflow-hidden"
-              style={{ transitionDelay: `${i * 0.07}s` }}
+              className="animate-on-scroll group cursor-pointer"
+              style={{ transitionDelay: `${i * 0.05}s` }}
             >
-              <div className="aspect-[4/3] overflow-hidden relative">
+              <div className="aspect-[4/5] overflow-hidden bg-secondary rounded-2xl mb-5">
                 <img
                   src={p.img}
                   alt={p.name}
                   loading="lazy"
                   width={800}
-                  height={600}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  height={1000}
+                  className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-[900ms] ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-lg font-semibold text-foreground mb-1.5">{p.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2 tracking-tight">{p.name}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light">{p.desc}</p>
               </div>
             </div>
           ))}
