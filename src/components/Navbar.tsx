@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 import pmmsLogo from "@/assets/pmms-logo.jpeg";
 
