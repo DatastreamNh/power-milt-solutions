@@ -65,11 +65,19 @@ const HeroSection = () => {
           High-quality plastic containers, cups, plugs, and preforms for businesses across Zimbabwe and beyond.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 text-base md:text-lg font-medium animate-fade-up" style={{ animationDelay: "0.35s" }}>
-          <button onClick={() => scrollTo("#contact")} className="text-foreground underline-offset-4 hover:underline transition">
-            Request a quote ›
-          </button>
-          <button onClick={() => scrollTo("#products")} className="text-muted-foreground hover:text-foreground transition">
+        <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.35s" }}>
+          <Button
+            onClick={() => scrollTo("#contact")}
+            size="lg"
+            className="rounded-full px-8 h-12 text-base font-medium"
+          >
+            Request a Quote
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+          <button
+            onClick={() => scrollTo("#products")}
+            className="text-base md:text-lg font-medium text-muted-foreground hover:text-foreground transition"
+          >
             View products ›
           </button>
         </div>
