@@ -53,7 +53,10 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background pt-24 pb-12">
       <div className="relative container mx-auto px-4 text-center max-w-5xl flex-shrink-0">
-        <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-semibold leading-[0.95] tracking-tight text-foreground mb-6 animate-fade-up">
+        <p className="text-xs sm:text-sm md:text-base font-medium tracking-[0.25em] text-muted-foreground uppercase mb-6 animate-fade-up">
+          Power Milt Manufacturing and Supply
+        </p>
+        <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-semibold leading-[0.95] tracking-tight text-foreground mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
           {typed}
           <span className="inline-block w-[3px] h-[0.7em] bg-foreground ml-1 align-middle animate-blink" />
         </h1>
