@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Music2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "@/components/ThemeToggle";
 import pmmsLogo from "@/assets/pmms-logo.jpeg";
@@ -56,6 +56,16 @@ const Navbar = () => {
               {link.label}
             </button>
           ))}
+          <a
+            href="https://www.tiktok.com/@powermilt"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+            className="flex items-center gap-1.5 text-[13px] font-normal text-foreground/80 hover:text-foreground transition-colors"
+          >
+            <Music2 className="h-4 w-4" />
+            TikTok
+          </a>
           <ThemeToggle />
         </div>
 
