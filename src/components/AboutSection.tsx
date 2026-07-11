@@ -26,7 +26,7 @@ const AboutSection = () => {
             <span className="text-muted-foreground">Driven by trust.</span>
           </h2>
           <p className="text-muted-foreground mt-8 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light">
-            Power Milt Manufacturer and Supply is a Zimbabwe-based company dedicated to delivering premium plastic packaging solutions to businesses of all sizes.
+            Power Milt Manufacturer & Supplier is a Zimbabwe-based company dedicated to delivering premium plastic packaging solutions to businesses of all sizes.
           </p>
         </div>
 
