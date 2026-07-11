@@ -83,7 +83,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-16 pt-8 text-center">
           <p className="text-sm text-white/30">
-            © {new Date().getFullYear()} Power Milt Manufacturer and Supply. All rights reserved.
+            © {new Date().getFullYear()} Power Milt Manufacturer & Supplier. All rights reserved.
           </p>
         </div>
       </div>

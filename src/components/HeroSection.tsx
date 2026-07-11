@@ -79,7 +79,7 @@ const HeroSection = () => {
         {/* Left rail — vertical tag */}
         <aside className="hidden lg:flex col-span-1 flex-col items-start justify-between py-4">
           <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground [writing-mode:vertical-rl] rotate-180">
-            Power Milt · Manufacturing & Supply
+            Power Milt · Manufacturer & Supplier
           </span>
           <div className="w-px h-24 accent-line" />
         </aside>
