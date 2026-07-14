@@ -43,7 +43,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-14 md:h-16 px-4">
         <button onClick={() => handleClick("#home")} className="flex items-center gap-2">
-          <img src={pmmsLogo} alt="PMMS Logo" className="h-8 md:h-9 w-auto rounded" />
+          <img src={pmmsLogo} alt="PMMS Logo" className="h-8 md:h-9 w-auto" />
         </button>
 
         <div className="hidden md:flex items-center gap-10">
