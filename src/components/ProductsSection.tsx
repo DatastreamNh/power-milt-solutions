@@ -9,22 +9,16 @@ import flasksImg from "@/assets/product-flasks.jpeg";
 import travelCupsImg from "@/assets/product-travel-cups.jpeg";
 import lunchSetImg from "@/assets/product-lunch-set.jpeg";
 import largeBottlesImg from "@/assets/product-large-bottles.jpeg";
-import waterBottlesImg from "@/assets/product-water-bottles.jpeg";
-import mintBottleImg from "@/assets/product-mint-bottle.jpeg";
 import clearJarsImg from "@/assets/product-clear-jars.jpeg";
 import foodCanistersImg from "@/assets/product-food-canisters.jpeg";
-import dairyBottleImg from "@/assets/product-dairy-bottle.jpeg";
 
 const products = [
   { name: "Plastic Containers", desc: "Durable, food-safe containers for storage, packaging, and distribution.", img: containersImg, tag: "Storage" },
   { name: "Plastic Cups", desc: "High-quality disposable and reusable cups for food service industries.", img: cupsImg, tag: "Food Service" },
   { name: "Plastic Plugs", desc: "Precision-moulded caps and plugs for bottles and containers.", img: plugsImg, tag: "Closures" },
   { name: "PET Preforms", desc: "Premium PET preforms for blow-moulding into bottles.", img: preformsImg, tag: "Preforms" },
-  { name: "Water Bottles", desc: "Crystal-clear PET water bottles in multiple sizes for beverage packaging.", img: waterBottlesImg, tag: "Beverage" },
-  { name: "Eco Beverage Bottles", desc: "Lightweight bottles with fresh, modern design for water and juice brands.", img: mintBottleImg, tag: "Beverage" },
   { name: "Clear Storage Jars", desc: "Transparent jars with secure lids — ideal for retail display and food storage.", img: clearJarsImg, tag: "Retail" },
   { name: "Food Canisters", desc: "Airtight canisters for dry goods, spices, and pantry organisation.", img: foodCanistersImg, tag: "Household" },
-  { name: "Dairy & Juice Bottles", desc: "Opaque HDPE bottles for dairy, juice, and liquid food products.", img: dairyBottleImg, tag: "Dairy" },
   { name: "Food Storage Sets", desc: "Complete container sets with lids for household and commercial food storage.", img: containersSetImg, tag: "Sets" },
   { name: "Vacuum Flasks", desc: "Insulated plastic flasks available in multiple colours for hot and cold beverages.", img: flasksImg, tag: "Insulated" },
   { name: "Travel Mugs", desc: "Stylish reusable travel cups with secure lids, available in various colours.", img: travelCupsImg, tag: "On-the-go" },
