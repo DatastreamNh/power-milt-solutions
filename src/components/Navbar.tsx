@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Music2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "@/components/ThemeToggle";
-import pmmsLogo from "@/assets/pmms-logo.jpeg";
+import pmmsLogo from "@/assets/pmms-logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
