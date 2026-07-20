@@ -1,90 +1,117 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { X } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import locationImg from "@/assets/gallery-location.jpeg";
 import machine1Img from "@/assets/gallery-machine1.jpeg";
 import machine3Img from "@/assets/gallery-machine3.jpeg";
+import containersImg from "@/assets/product-containers.jpg";
+import cupsImg from "@/assets/product-cups.jpg";
+import plugsImg from "@/assets/product-plugs.jpg";
 import cupsRealImg from "@/assets/gallery-cups-real.jpeg";
 import bottlesImg from "@/assets/gallery-bottles.jpeg";
 import machinePreformsImg from "@/assets/gallery-machine-preforms.jpeg";
 import bottlingLineImg from "@/assets/gallery-bottling-line.jpeg";
 import machineOutputImg from "@/assets/gallery-machine-output.jpeg";
-import containersSet from "@/assets/product-containers-set.jpeg";
-import lunchSet from "@/assets/product-lunch-set.jpeg";
 
 const images = [
-  { src: locationImg, title: "Our Facility", cat: "Facility", span: "row-span-2" },
-  { src: machine1Img, title: "Production Line", cat: "Manufacturing", span: "" },
-  { src: bottlesImg, title: "PET Bottles", cat: "Products", span: "" },
-  { src: machinePreformsImg, title: "Preform Machine", cat: "Manufacturing", span: "row-span-2" },
-  { src: cupsRealImg, title: "Drinking Cups", cat: "Products", span: "" },
-  { src: bottlingLineImg, title: "Bottling Line", cat: "Manufacturing", span: "" },
-  { src: containersSet, title: "Container Range", cat: "Products", span: "" },
-  { src: machine3Img, title: "Blow Moulding", cat: "Manufacturing", span: "" },
-  { src: machineOutputImg, title: "Manufacturing Output", cat: "Manufacturing", span: "row-span-2" },
-  { src: lunchSet, title: "Lunch Sets", cat: "Products", span: "" },
+  { src: locationImg, title: "Our Factory – Workington, Harare", category: "Facility" },
+  { src: machine1Img, title: "Production Line Inspection", category: "Manufacturing" },
+  { src: machine3Img, title: "Blow Moulding Machine", category: "Manufacturing" },
+  { src: machinePreformsImg, title: "Preform Production Machine", category: "Manufacturing" },
+  { src: machineOutputImg, title: "Bottle Manufacturing Output", category: "Manufacturing" },
+  { src: bottlingLineImg, title: "Bottling Production Line", category: "Manufacturing" },
+  { src: containersImg, title: "Plastic Containers", category: "Products" },
+  { src: cupsImg, title: "Plastic Cups", category: "Products" },
+  { src: cupsRealImg, title: "Drinking Cups", category: "Products" },
+  { src: bottlesImg, title: "PET Bottles", category: "Products" },
+  { src: plugsImg, title: "Plugs & Caps", category: "Products" },
 ];
 
 const GallerySection = () => {
   const ref = useScrollAnimation();
-  const [lightbox, setLightbox] = useState<number | null>(null);
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prevSlide = useCallback(() => setSlideIndex((i) => (i - 1 + images.length) % images.length), []);
+  const nextSlide = useCallback(() => setSlideIndex((i) => (i + 1) % images.length), []);
 
   return (
-    <section id="gallery" className="section-padding bg-secondary/30 relative" ref={ref}>
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-on-scroll max-w-2xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4">Gallery</p>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.05]">
-            Inside our facility.
+    <section id="gallery" className="section-padding rich-gradient-alt relative overflow-hidden" ref={ref}>
+      <div className="absolute top-10 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
+      <div className="container mx-auto">
+        <div className="text-center mb-12 animate-on-scroll">
+          <p className="text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-3">Gallery</p>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+            Inside <span className="text-primary">Power</span><span className="text-danger">Milt</span>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground font-light">
-            A closer look at our machinery, our team, and the products we ship.
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+            A look at our facility, machinery, and quality products.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] gap-4 animate-on-scroll">
-          {images.map((img, i) => (
-            <button
-              key={i}
-              onClick={() => setLightbox(i)}
-              className={`relative rounded-[1.25rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500 ${img.span}`}
-            >
+        {/* Slideshow */}
+        <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl group mb-12 animate-on-scroll">
+          <div className="aspect-[16/9] relative">
+            {images.map((img, i) => (
               <img
+                key={i}
                 src={img.src}
                 alt={img.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                  i === slideIndex ? "opacity-100" : "opacity-0"
+                }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-4 left-4 right-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 text-left">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-white/80">{img.cat}</p>
-                <p className="font-display font-semibold text-white text-lg leading-tight">{img.title}</p>
-              </div>
-            </button>
-          ))}
+            ))}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+              <p className="text-white font-display text-lg font-semibold">{images[slideIndex].title}</p>
+              <p className="text-white/70 text-sm">{images[slideIndex].category}</p>
+            </div>
+          </div>
+
+          <button
+            onClick={prevSlide}
+            className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setSlideIndex(i)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  i === slideIndex ? "bg-white w-5" : "bg-white/50"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center animate-on-scroll">
+          <Link to="/gallery">
+            <Button variant="outline" size="lg" className="gap-2 rounded-full">
+              View Full Gallery
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
-
-      {lightbox !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-foreground/95 backdrop-blur-sm flex items-center justify-center p-6 animate-fade-in"
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            className="absolute top-6 right-6 h-12 w-12 rounded-full bg-background/10 text-background hover:bg-background/20 flex items-center justify-center"
-            onClick={() => setLightbox(null)}
-          >
-            <X className="h-5 w-5" />
-          </button>
-          <img
-            src={images[lightbox].src}
-            alt={images[lightbox].title}
-            className="max-w-full max-h-full rounded-2xl shadow-2xl object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
     </section>
   );
 };
