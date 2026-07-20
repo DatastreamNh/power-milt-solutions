@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
-import heroBg from "@/assets/hero-products-collage.jpeg";
+import heroBg from "@/assets/hero-premium.jpg";
 
 const phrases = [
   "Quality Plastic Packaging",
@@ -125,30 +125,64 @@ const HeroSection = () => {
 
         {/* Right editorial column */}
         <aside className="col-span-12 lg:col-span-4 flex flex-col gap-6 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-premium group">
-            <img
-              src={heroBg}
-              alt="Plastic manufacturing"
-              className="w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-110"
-              width={800}
-              height={1000}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent mix-blend-multiply" />
-            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-primary-foreground">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.3em] opacity-80">Facility</p>
-                <p className="font-display font-bold text-xl leading-tight">Workington, Harare</p>
+          <div className="relative group">
+            {/* Ambient glow behind card */}
+            <div className="absolute -inset-6 bg-gradient-to-br from-primary/40 via-transparent to-danger/40 blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
+
+            {/* Corner brackets */}
+            <span className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-scarlet z-20" />
+            <span className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-cobalt z-20" />
+
+            <div className="relative rounded-[28px] overflow-hidden aspect-[4/5] shadow-premium ring-1 ring-white/10">
+              <img
+                src={heroBg}
+                alt="Premium plastic manufacturing — PET preforms and containers"
+                className="w-full h-full object-cover transition-transform duration-[1800ms] ease-out group-hover:scale-[1.08]"
+                width={1024}
+                height={1280}
+              />
+
+              {/* Layered cinematic gradients */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-danger/20 mix-blend-overlay" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[28px] pointer-events-none" />
+
+              {/* Top badge */}
+              <div className="absolute top-5 left-5 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-danger animate-pulse" />
+                <span className="text-[10px] uppercase tracking-[0.3em] text-white/90 font-semibold">
+                  Live · Production
+                </span>
               </div>
-              <span className="w-2 h-2 rounded-full bg-danger animate-pulse" />
+
+              {/* Floating glass caption */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="rounded-2xl bg-white/10 backdrop-blur-2xl border border-white/20 p-4 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
+                  <div className="flex items-end justify-between gap-3">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">Facility</p>
+                      <p className="font-display font-bold text-lg leading-tight text-white">
+                        Workington, Harare
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">Est.</p>
+                      <p className="font-display font-bold text-lg leading-tight text-white">2014</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5 hover:border-primary/60 transition-colors">
+            <div className="group/stat relative rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5 hover:border-primary/60 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-cobalt to-transparent opacity-0 group-hover/stat:opacity-100 transition-opacity" />
               <p className="font-display text-3xl font-black text-cobalt tracking-tight">10<span className="text-scarlet">+</span></p>
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Years crafting</p>
             </div>
-            <div className="rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5 hover:border-danger/60 transition-colors">
+            <div className="group/stat relative rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5 hover:border-danger/60 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-scarlet to-transparent opacity-0 group-hover/stat:opacity-100 transition-opacity" />
               <p className="font-display text-3xl font-black text-scarlet tracking-tight">1M<span className="text-cobalt">+</span></p>
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Units shipped</p>
             </div>
