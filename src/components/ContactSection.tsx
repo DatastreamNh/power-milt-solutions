@@ -23,8 +23,8 @@ const ContactSection = () => {
 
   const info = [
     { title: "Location", lines: ["47 Coventry Road, Workington, Harare, Zimbabwe"] },
-    { title: "Phone", lines: ["+263 784 231 146", "+263 714 704 101"] },
-    { title: "Email", lines: ["admin@powermilt.co.zw"] },
+    { title: "Phone", lines: ["+263 714 704 101"] },
+    { title: "Email", lines: ["admin@powermiltmanufacturing.co.zw"] },
   ];
 
   return (
