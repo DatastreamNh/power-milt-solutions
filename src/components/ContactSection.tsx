@@ -16,15 +16,15 @@ const ContactSection = () => {
       return;
     }
     const text = `Hello Power Milt!%0A%0AName: ${encodeURIComponent(form.name)}%0AEmail: ${encodeURIComponent(form.email)}%0AMessage: ${encodeURIComponent(form.message)}`;
-    window.open(`https://wa.me/263784231146?text=${text}`, "_blank");
+    window.open(`https://wa.me/263714704101?text=${text}`, "_blank");
     toast.success("Opening WhatsApp...");
     setForm({ name: "", email: "", message: "" });
   };
 
   const info = [
     { title: "Location", lines: ["47 Coventry Road, Workington, Harare, Zimbabwe"] },
-    { title: "Phone", lines: ["+263 784 231 146", "+263 714 704 101"] },
-    { title: "Email", lines: ["admin@powermilt.co.zw"] },
+    { title: "Phone", lines: ["+263 714 704 101"] },
+    { title: "Email", lines: ["admin@powermiltmanufacturing.co.zw"] },
   ];
 
   return (
