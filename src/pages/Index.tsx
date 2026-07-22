@@ -8,6 +8,7 @@ import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import GravityMode from "@/components/GravityMode";
 
 const Index = () => (
   <div className="min-h-screen">
@@ -21,6 +22,7 @@ const Index = () => (
     <ContactSection />
     <Footer />
     <Chatbot />
+    <GravityMode />
   </div>
 );
 
