@@ -16,7 +16,7 @@ const ContactSection = () => {
       return;
     }
     const text = `Hello Power Milt!%0A%0AName: ${encodeURIComponent(form.name)}%0AEmail: ${encodeURIComponent(form.email)}%0AMessage: ${encodeURIComponent(form.message)}`;
-    window.open(`https://wa.me/263784231146?text=${text}`, "_blank");
+    window.open(`https://wa.me/263714704101?text=${text}`, "_blank");
     toast.success("Opening WhatsApp...");
     setForm({ name: "", email: "", message: "" });
   };
