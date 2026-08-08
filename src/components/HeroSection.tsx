@@ -53,7 +53,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col overflow-hidden bg-background pt-24 pb-16"
+      className="relative lg:min-h-[100svh] flex flex-col overflow-hidden bg-background pt-20 sm:pt-24 pb-10 sm:pb-16"
     >
       {/* Ambient premium background: cobalt + scarlet blobs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -67,15 +67,15 @@ const HeroSection = () => {
 
       {/* Editorial magazine top strip */}
       <div className="relative container mx-auto px-4 md:px-8 max-w-7xl">
-        <div className="flex items-center justify-between text-[10px] md:text-xs uppercase tracking-[0.35em] text-muted-foreground border-b border-border pb-4">
-          <span className="text-scarlet font-semibold">Issue 001</span>
-          <span className="hidden md:inline">Harare · Zimbabwe</span>
-          <span className="text-cobalt font-semibold">Est. Premium Manufacturing</span>
+        <div className="flex items-center justify-between gap-3 text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.2em] sm:tracking-[0.35em] text-muted-foreground border-b border-border pb-3 sm:pb-4">
+          <span className="text-scarlet font-semibold whitespace-nowrap">Issue 001</span>
+          <span className="hidden sm:inline whitespace-nowrap">Harare · Zimbabwe</span>
+          <span className="text-cobalt font-semibold text-right">Est. Premium Manufacturing</span>
         </div>
       </div>
 
       {/* Magazine grid layout */}
-      <div className="relative container mx-auto px-4 md:px-8 max-w-7xl flex-1 grid grid-cols-12 gap-6 md:gap-10 mt-10 md:mt-16">
+      <div className="relative container mx-auto px-4 md:px-8 max-w-7xl lg:flex-1 grid grid-cols-12 gap-8 md:gap-10 mt-8 sm:mt-10 md:mt-16">
         {/* Left rail — vertical tag */}
         <aside className="hidden lg:flex col-span-1 flex-col items-start justify-between py-4">
           <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground [writing-mode:vertical-rl] rotate-180">
@@ -86,29 +86,31 @@ const HeroSection = () => {
 
         {/* Main headline */}
         <div className="col-span-12 lg:col-span-7 flex flex-col justify-center animate-reveal">
-          <p className="text-[11px] md:text-xs font-semibold tracking-[0.3em] text-scarlet uppercase mb-6">
+          <p className="text-[10px] md:text-xs font-semibold tracking-[0.3em] text-scarlet uppercase mb-4 sm:mb-6">
             — Feature Story
           </p>
 
-          <h1 className="font-display text-[3.25rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] font-black leading-[0.9] tracking-[-0.045em] text-foreground">
+          <h1 className="font-display text-[2.5rem] xs:text-5xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-black leading-[1] sm:leading-[0.9] tracking-[-0.04em] sm:tracking-[-0.045em] text-foreground break-words">
             <span className="block">The art of</span>
-            <span className="block text-premium-gradient">{typed}</span>
-            <span className="inline-block w-[6px] h-[0.7em] bg-danger ml-1 align-middle animate-blink" />
+            <span className="block min-h-[1.1em]">
+              <span className="text-premium-gradient">{typed}</span>
+              <span className="inline-block w-[5px] h-[0.7em] bg-danger ml-1 align-middle animate-blink" />
+            </span>
           </h1>
 
-          <div className="mt-10 flex items-start gap-6 max-w-2xl">
-            <span className="mt-2 w-10 h-[2px] accent-line shrink-0" />
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+          <div className="mt-6 sm:mt-10 flex items-start gap-4 sm:gap-6 max-w-2xl">
+            <span className="mt-2 w-8 sm:w-10 h-[2px] accent-line shrink-0" />
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
               High-quality plastic containers, cups, plugs, and preforms —
               engineered in Harare, trusted across Zimbabwe and beyond.
             </p>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-5">
+          <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 sm:gap-5">
             <Button
               onClick={() => scrollTo("#contact")}
               size="lg"
-              className="rounded-full px-8 h-14 text-base font-semibold shadow-premium bg-primary hover:bg-primary/90 hover:scale-[1.03] transition-all duration-300"
+              className="w-full sm:w-auto rounded-full px-8 h-12 sm:h-14 text-sm sm:text-base font-semibold shadow-premium bg-primary hover:bg-primary/90 sm:hover:scale-[1.03] transition-all duration-300"
             >
               Request a Quote
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -124,7 +126,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right editorial column */}
-        <aside className="col-span-12 lg:col-span-4 flex flex-col gap-6 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+        <aside className="col-span-12 lg:col-span-4 flex flex-col gap-4 sm:gap-6 animate-fade-up" style={{ animationDelay: "0.4s" }}>
           <div className="relative group">
             {/* Ambient glow behind card */}
             <div className="absolute -inset-6 bg-gradient-to-br from-primary/40 via-transparent to-danger/40 blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
@@ -133,7 +135,7 @@ const HeroSection = () => {
             <span className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-scarlet z-20" />
             <span className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-cobalt z-20" />
 
-            <div className="relative rounded-[28px] overflow-hidden aspect-[4/5] shadow-premium ring-1 ring-white/10">
+            <div className="relative rounded-[20px] sm:rounded-[28px] overflow-hidden aspect-[4/3] sm:aspect-[4/5] shadow-premium ring-1 ring-white/10">
               <img
                 src={heroBg}
                 alt="Premium plastic manufacturing — PET preforms and containers"
@@ -156,18 +158,18 @@ const HeroSection = () => {
               </div>
 
               {/* Floating glass caption */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="rounded-2xl bg-white/10 backdrop-blur-2xl border border-white/20 p-4 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
+                <div className="rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-2xl border border-white/20 p-3 sm:p-4 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
                   <div className="flex items-end justify-between gap-3">
                     <div>
-                      <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">Facility</p>
-                      <p className="font-display font-bold text-lg leading-tight text-white">
+                      <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-white/70">Facility</p>
+                      <p className="font-display font-bold text-sm sm:text-lg leading-tight text-white">
                         Workington, Harare
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">Est.</p>
-                      <p className="font-display font-bold text-lg leading-tight text-white">2014</p>
+                      <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-white/70">Est.</p>
+                      <p className="font-display font-bold text-sm sm:text-lg leading-tight text-white">2014</p>
                     </div>
                   </div>
                 </div>
@@ -175,29 +177,29 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="group/stat relative rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5 hover:border-primary/60 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="group/stat relative rounded-xl border border-border bg-card/60 backdrop-blur-sm p-4 sm:p-5 hover:border-primary/60 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
               <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-cobalt to-transparent opacity-0 group-hover/stat:opacity-100 transition-opacity" />
-              <p className="font-display text-3xl font-black text-cobalt tracking-tight">10<span className="text-scarlet">+</span></p>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Years crafting</p>
+              <p className="font-display text-2xl sm:text-3xl font-black text-cobalt tracking-tight">10<span className="text-scarlet">+</span></p>
+              <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Years crafting</p>
             </div>
-            <div className="group/stat relative rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5 hover:border-danger/60 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+            <div className="group/stat relative rounded-xl border border-border bg-card/60 backdrop-blur-sm p-4 sm:p-5 hover:border-danger/60 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
               <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-scarlet to-transparent opacity-0 group-hover/stat:opacity-100 transition-opacity" />
-              <p className="font-display text-3xl font-black text-scarlet tracking-tight">1M<span className="text-cobalt">+</span></p>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Units shipped</p>
+              <p className="font-display text-2xl sm:text-3xl font-black text-scarlet tracking-tight">1M<span className="text-cobalt">+</span></p>
+              <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Units shipped</p>
             </div>
           </div>
         </aside>
       </div>
 
       {/* Bottom marquee */}
-      <div className="relative mt-12 md:mt-16 overflow-hidden border-y border-border py-4">
+      <div className="relative mt-10 sm:mt-12 md:mt-16 overflow-hidden border-y border-border py-3 sm:py-4">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, k) => (
-            <div key={k} className="flex items-center gap-12 px-6">
+            <div key={k} className="flex items-center gap-6 sm:gap-12 px-4 sm:px-6">
               {["Containers", "Cups", "Plugs", "Preforms", "Custom Molding", "Bulk Supply", "Export Ready"].map((t, i) => (
-                <span key={`${k}-${i}`} className="flex items-center gap-12">
-                  <span className="font-display text-2xl md:text-4xl font-black tracking-tight text-foreground/80">
+                <span key={`${k}-${i}`} className="flex items-center gap-6 sm:gap-12">
+                  <span className="font-display text-lg sm:text-2xl md:text-4xl font-black tracking-tight text-foreground/80">
                     {t}
                   </span>
                   <span className={`w-2 h-2 rounded-full ${i % 2 === 0 ? "bg-cobalt" : "bg-scarlet"}`} />
