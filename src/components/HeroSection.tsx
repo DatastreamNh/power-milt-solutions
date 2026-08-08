@@ -92,8 +92,10 @@ const HeroSection = () => {
 
           <h1 className="font-display text-[2.5rem] xs:text-5xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-black leading-[1] sm:leading-[0.9] tracking-[-0.04em] sm:tracking-[-0.045em] text-foreground break-words">
             <span className="block">The art of</span>
-            <span className="block min-h-[1.1em] text-premium-gradient">{typed}</span>
-            <span className="inline-block w-[5px] h-[0.7em] bg-danger ml-1 align-middle animate-blink" />
+            <span className="block min-h-[1.1em]">
+              <span className="text-premium-gradient">{typed}</span>
+              <span className="inline-block w-[5px] h-[0.7em] bg-danger ml-1 align-middle animate-blink" />
+            </span>
           </h1>
 
           <div className="mt-6 sm:mt-10 flex items-start gap-4 sm:gap-6 max-w-2xl">
