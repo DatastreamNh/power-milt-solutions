@@ -53,7 +53,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] flex flex-col overflow-hidden bg-background pt-20 sm:pt-24 pb-10 sm:pb-16"
+      className="relative lg:min-h-[100svh] flex flex-col overflow-hidden bg-background pt-20 sm:pt-24 pb-10 sm:pb-16"
     >
       {/* Ambient premium background: cobalt + scarlet blobs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -75,7 +75,7 @@ const HeroSection = () => {
       </div>
 
       {/* Magazine grid layout */}
-      <div className="relative container mx-auto px-4 md:px-8 max-w-7xl flex-1 grid grid-cols-12 gap-8 md:gap-10 mt-8 sm:mt-10 md:mt-16">
+      <div className="relative container mx-auto px-4 md:px-8 max-w-7xl lg:flex-1 grid grid-cols-12 gap-8 md:gap-10 mt-8 sm:mt-10 md:mt-16">
         {/* Left rail — vertical tag */}
         <aside className="hidden lg:flex col-span-1 flex-col items-start justify-between py-4">
           <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground [writing-mode:vertical-rl] rotate-180">
