@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
-import heroBg from "@/assets/hero-premium.jpg";
+import heroBg from "@/assets/gallery-machine3.jpeg";
 
 const phrases = [
   "Quality Plastic Packaging",
