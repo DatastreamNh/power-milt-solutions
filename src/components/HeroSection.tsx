@@ -167,10 +167,6 @@ const HeroSection = () => {
                         Workington, Harare
                       </p>
                     </div>
-                    <div className="text-right">
-                      <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-white/70">Est.</p>
-                      <p className="font-display font-bold text-sm sm:text-lg leading-tight text-white">2014</p>
-                    </div>
                   </div>
                 </div>
               </div>
